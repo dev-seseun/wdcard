@@ -1,8 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // let container = document.querySelector("main");
-let visual = document.querySelector("#visual");
-let filter = document.querySelector("#visual .filter");
 
 // smooth scrolling container
 // let height;
@@ -23,6 +21,14 @@ let filter = document.querySelector("#visual .filter");
 //   },
 // });
 
+let intro = document.querySelector("#intro");
+let introH1 = document.querySelector("#intro h1");
+let introH2 = document.querySelectorAll("#intro h2");
+let introImg = document.querySelector("#intro .img-box");
+let introText = document.querySelector("#intro .text-box");
+let introTouch = document.querySelector("#intro .touch-box");
+let visual = document.querySelector("#visual .img-box");
+
 // split
 $(".split").each(function () {
   var charArr = $(this).text().split("");
@@ -34,15 +40,9 @@ $(".split").each(function () {
 });
 
 setTimeout(function () {
-  // visual
-  var tl = gsap.timeline();
-  tl.to("#visual", {
-    filter: "blur(0px)",
-    duration: 2,
-    ease: "power2.out",
-  });
-  tl.fromTo(
-    "#visual h1 span",
+  var introTl = gsap.timeline();
+  introTl.fromTo(
+    "#intro .text-box h1 span",
     {
       y: -4,
       opacity: 0,
@@ -55,16 +55,99 @@ setTimeout(function () {
       ease: "power3.out",
     }
   );
-  tl.fromTo(
-    "#visual h2 span",
+  introTl.fromTo(
+    "#intro .text-box h2 span",
     {
+      y: -2,
       opacity: 0,
     },
     {
+      y: 0,
       opacity: 1,
-      stagger: 0.1,
-      duration: 0.8,
+      stagger: 0.15,
+      duration: 0.5,
       ease: "power3.out",
     }
   );
+  introTl.fromTo(introTouch, { opacity: 0, visibility: "hidden" }, { opacity: 1, visibility: "visible", duration: 0.5 });
 }, 200);
+
+$("#intro .touch-box").click(function () {
+  const audio = document.querySelector("audio");
+  audio.play();
+
+  var introTouchTl = gsap.timeline();
+  introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.5 });
+  introTouchTl.to(introImg, {
+    opacity: 0,
+    duration: 1.5,
+    ease: "power1.out",
+  });
+  introTouchTl.to(intro, {
+    borderRadius: "0 0 100px 100px",
+    duration: 1,
+    ease: "power3.out",
+  });
+  introTouchTl.to(intro, {
+    y: "-100%",
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  introTouchTl.to(introText, {
+    opacity: 0,
+    duration: 2,
+  });
+  // 스타일변경
+  introTouchTl.to(intro, {
+    height: "auto",
+    borderRadius: "0 0 40px 40px",
+  });
+  introTouchTl.to(introText, {
+    display: "flex",
+    padding: "0.5rem 1.5rem",
+    margin: 0,
+    duration: 0,
+    opacity: 1,
+  });
+  introTouchTl.to(introH1, {
+    display: "none",
+    duration: 0,
+  });
+  introTouchTl.to(introH2, {
+    fontSize: "0.9rem",
+    marginLeft: "0.5rem",
+    duration: 0,
+  });
+  introTouchTl.to(introText, {
+    opacity: 1,
+    duration: 0,
+  });
+  //
+  introTouchTl.to(visual, {
+    filter: "blur(0px)",
+    duration: 2,
+  });
+  // introTouchTl.to(intro, {
+  //   y: 0,
+  //   duration: 1,
+  //   ease: "power4.out",
+  // });
+  setTimeout(function () {
+    $("main").removeClass("fixed");
+  }, 6000);
+});
+
+const swiper = new Swiper(".swiper", {
+  effect: "fade",
+  zoom: true,
+  speed: 600,
+  threshold: 20,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
