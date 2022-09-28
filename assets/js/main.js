@@ -1,57 +1,70 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-let container = document.querySelector("main");
-
-let height;
-function setHeight() {
-  height = container.clientHeight;
-  document.body.style.height = height + "px";
-}
-ScrollTrigger.addEventListener("refreshInit", setHeight);
+// let container = document.querySelector("main");
+let visual = document.querySelector("#visual");
+let filter = document.querySelector("#visual .filter");
 
 // smooth scrolling container
-gsap.to(container, {
-  y: () => -(height - document.documentElement.clientHeight),
-  ease: "none",
-  scrollTrigger: {
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: 2,
-    invalidateOnRefresh: true,
-  },
+// let height;
+// function setHeight() {
+//   height = container.clientHeight;
+//   document.body.style.height = height + "px";
+// }
+// ScrollTrigger.addEventListener("refreshInit", setHeight);
+// gsap.to(container, {
+//   y: () => -(height - document.documentElement.clientHeight),
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: document.body,
+//     start: "top top",
+//     end: "bottom bottom",
+//     scrub: 2,
+//     invalidateOnRefresh: true,
+//   },
+// });
+
+// split
+$(".split").each(function () {
+  var charArr = $(this).text().split("");
+  var tagWrapArr = "";
+  for (var i = 0; i < charArr.length; i++) {
+    tagWrapArr += `<span>${charArr[i]}</span>`;
+  }
+  $(this).html(tagWrapArr);
 });
 
-// scrolltrigger for each box
-gsap.utils.toArray(".box").forEach((box) => {
-  gsap.to(box, {
-    backgroundColor: "#ffffff",
-    scrollTrigger: {
-      trigger: box,
-      start: "top center",
-      toggleActions: "play none none reverse",
-      markers: true,
+setTimeout(function () {
+  // visual
+  var tl = gsap.timeline();
+  tl.to("#visual", {
+    filter: "blur(0px)",
+    duration: 2,
+    ease: "power2.out",
+  });
+  tl.fromTo(
+    "#visual h1 span",
+    {
+      y: -4,
+      opacity: 0,
     },
-  });
-});
-
-function setupLinks(scroller) {
-  let linkElements = gsap.utils.toArray(".nav a"),
-    linkTargets = linkElements.map((e) => document.querySelector(e.getAttribute("href"))),
-    linkPositions = [],
-    calculatePositions = () => {
-      let offset = gsap.getProperty(scroller, "y");
-      linkTargets.forEach((e, i) => (linkPositions[i] = e.getBoundingClientRect().top - offset));
-    };
-
-  linkElements.forEach((element, i) => {
-    element.addEventListener("click", (e) => {
-      e.preventDefault();
-      gsap.to(window, { scrollTo: linkPositions[i], ease: "power4", overwrite: true });
-    });
-  });
-
-  ScrollTrigger.addEventListener("refresh", calculatePositions);
-}
-
-setupLinks(container);
+    {
+      y: 0,
+      opacity: 1,
+      stagger: 0.2,
+      duration: 0.5,
+      ease: "power3.out",
+    }
+  );
+  tl.fromTo(
+    "#visual h2 span",
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "power3.out",
+    }
+  );
+}, 200);

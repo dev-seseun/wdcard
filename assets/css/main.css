@@ -1,13 +1,122 @@
-main {
-  -webkit-overflow-scrolling: touch;
-}
-
-main section {
-  min-height: 100vh;
-}
-
-main #visual {
+#visual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
   width: 100%;
   height: 100vh;
-  background: url("../images/test.jpg") no-repeat center/cover;
+  overflow: hidden;
+  background: url("../images/16.jpg") no-repeat center/cover;
+  filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#visual .text-top {
+  height: 56vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#visual .text-top h1,
+#visual .text-top h2 {
+  color: var(--bs-white);
+  font-weight: 400;
+  text-shadow: 0 0 2px rgba(49, 47, 18, 0.1);
+}
+
+#visual .text-top h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 0;
+}
+
+#visual .text-top h2 {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+#bottom {
+  position: relative;
+  z-index: 1;
+  margin-top: 100vh;
+  background-color: #fffbf5;
+  border-radius: 3rem 3rem 0 0;
+  padding-bottom: 6rem;
+}
+
+#bottom article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 0;
+}
+
+#bottom article table {
+  width: 80%;
+  table-layout: fixed;
+  border-top: 1px solid var(--bs-border);
+}
+
+#bottom article table th {
+  font-weight: 400;
+  color: var(--bs-gray);
+  height: 60px;
+}
+
+#bottom article table td {
+  font-weight: 300;
+  height: 50px;
+}
+
+#bottom article table td strong {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--bs-dark);
+  border-radius: 100%;
+}
+
+#bottom article .parents {
+  margin-top: 2rem;
+}
+
+#bottom article .parents > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bottom article .parents > div strong {
+  font-weight: 600;
+  padding: 0 0.75rem;
+}
+
+#bottom article .parents > div .circle-box strong {
+  position: relative;
+}
+
+#bottom article .parents > div .circle-box strong:not(:first-of-type):before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: var(--bs-secondary);
+  border-radius: 100%;
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -2px;
+}
+
+.split > * {
+  display: inline-flex;
+  min-width: 6px;
 }
