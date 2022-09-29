@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
 :root {
+  --bs-primary: #f5c385;
+  --bs-primary-opacity: rgba(245, 195, 133, 0.3);
   --bs-dark: #333;
   --bs-gray: #9c9791;
   --bs-secondary: #7a786f;
@@ -16,7 +18,7 @@ body {
 }
 * {
   font-family: "Gowun Batang", "Noto Serif KR", serif;
-  line-height: 1.6;
+  line-height: 2;
 }
 main {
   width: 100%;

@@ -151,3 +151,11 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// 지도
+new daum.roughmap.Lander({
+  timestamp: "1664461519874",
+  key: "2bvqt",
+  mapWidth: "100%",
+  mapHeight: "400",
+}).render();

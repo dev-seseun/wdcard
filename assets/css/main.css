@@ -117,7 +117,7 @@ main.fixed {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(245, 195, 133, 0.25);
+  background: var(--bs-primary-opacity);
   border-radius: 100%;
   animation-name: scaleCircle1;
   animation-duration: 2s;
@@ -133,7 +133,7 @@ main.fixed {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(245, 195, 133, 0.2);
+  background: var(--bs-primary-opacity);
   border-radius: 100%;
   transform: scale(0.28) translateY(-16px);
   animation-name: scaleCircle2;
@@ -191,8 +191,22 @@ main.fixed {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 5rem 1.5rem;
   position: relative;
+}
+
+#bottom article .title-area {
+  margin-bottom: 2rem;
+}
+
+#bottom article .title-area h6 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#bottom article .title-area p {
+  margin-top: 0.3rem;
 }
 
 #bottom article:after {
@@ -268,6 +282,7 @@ main.fixed {
 
 #bottom article.album {
   padding: 0;
+  height: 100vh;
 }
 
 #bottom article.album .swiper {
@@ -357,8 +372,64 @@ main.fixed {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #f5c385;
+  background: var(--bs-primary);
   border-radius: 100%;
+}
+
+#bottom article.path {
+  padding: 5rem 0;
+}
+
+#bottom article.path .root_daum_roughmap {
+  width: 100%;
+}
+
+#bottom article.path .btn-area {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bottom article.path .btn-area a.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  margin: 0 0.25rem;
+  font-weight: 700;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+#bottom article.path .btn-area a.btn:focus, #bottom article.path .btn-area a.btn:active {
+  border: none;
+}
+
+#bottom article.path .btn-area a.btn.btn-naver {
+  background: #00c73c;
+  color: #fff;
+}
+
+#bottom article.path .btn-area a.btn.btn-kakao {
+  background: #f9e000;
+}
+
+#bottom article.path .detail {
+  width: 100%;
+  padding: 0 1.5rem;
+  text-align: left;
+}
+
+#bottom article.path .detail strong {
+  display: block;
+  margin-top: 1rem;
+}
+
+#bottom article.path .detail u {
+  text-decoration: none;
+  background: var(--bs-primary-opacity);
 }
 
 .split > * {

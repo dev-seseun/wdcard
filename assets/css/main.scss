@@ -103,7 +103,7 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(245, 195, 133, 0.25);
+        background: var(--bs-primary-opacity);
         border-radius: 100%;
         animation-name: scaleCircle1;
         animation-duration: 2s;
@@ -118,7 +118,7 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(245, 195, 133, 0.2);
+        background: var(--bs-primary-opacity);
         border-radius: 100%;
         transform: scale(0.28) translateY(-16px);
         animation-name: scaleCircle2;
@@ -181,8 +181,19 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
     position: relative;
+    .title-area {
+      margin-bottom: 2rem;
+      h6 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+      p {
+        margin-top: 0.3rem;
+      }
+    }
     &:after {
       content: "";
       display: block;
@@ -257,6 +268,7 @@ main {
     // 앨범
     &.album {
       padding: 0;
+      height: 100vh;
       // margin: 0 -1rem;
       .swiper {
         width: 100vw;
@@ -331,9 +343,56 @@ main {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            background: #f5c385;
+            background: var(--bs-primary);
             border-radius: 100%;
           }
+        }
+      }
+    }
+    &.path {
+      padding: 5rem 0;
+      .root_daum_roughmap {
+        width: 100%;
+      }
+      .btn-area {
+        width: 100%;
+        padding: 1.5rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a.btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          width: 100%;
+          margin: 0 0.25rem;
+          font-weight: 700;
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+          &:focus,
+          &:active {
+            border: none;
+          }
+          &.btn-naver {
+            background: #00c73c;
+            color: #fff;
+          }
+          &.btn-kakao {
+            background: #f9e000;
+          }
+        }
+      }
+      .detail {
+        width: 100%;
+        padding: 0 1.5rem;
+        text-align: left;
+        strong {
+          display: block;
+          margin-top: 1rem;
+        }
+        u {
+          text-decoration: none;
+          background: var(--bs-primary-opacity);
         }
       }
     }
