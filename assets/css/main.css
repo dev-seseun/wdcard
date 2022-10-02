@@ -81,6 +81,7 @@ main.fixed {
 
 #intro .text-box h2 {
   font-size: 1rem;
+  line-height: 1.8;
 }
 
 #intro .touch-box {

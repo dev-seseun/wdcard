@@ -56,15 +56,27 @@ setTimeout(function () {
     }
   );
   introTl.fromTo(
-    "#intro .text-box h2 span",
+    "#intro .text-box .date",
     {
-      y: -2,
+      y: 5,
       opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
-      stagger: 0.15,
+      duration: 0.5,
+      ease: "power3.out",
+    }
+  );
+  introTl.fromTo(
+    "#intro .text-box .place",
+    {
+      y: 5,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
       duration: 0.5,
       ease: "power3.out",
     }
@@ -85,7 +97,7 @@ $("#intro .touch-box").click(function () {
   });
   introTouchTl.to(intro, {
     borderRadius: "0 0 100px 100px",
-    duration: 1,
+    duration: 0.5,
     ease: "power3.out",
   });
   introTouchTl.to(intro, {
@@ -101,6 +113,7 @@ $("#intro .touch-box").click(function () {
   introTouchTl.to(intro, {
     height: "auto",
     borderRadius: "0 0 40px 40px",
+    duration: 0,
   });
   introTouchTl.to(introText, {
     display: "flex",
@@ -124,6 +137,7 @@ $("#intro .touch-box").click(function () {
   });
   //
   introTouchTl.to(visual, {
+    delay: -3,
     filter: "blur(0px)",
     duration: 2,
   });
