@@ -8,6 +8,8 @@
   --bs-secondary: #7a786f;
   --bs-border: #bbb9af;
   --bs-white: #fff;
+  --bs-white: #fff;
+  --bs-font-sans-serif: "Noto Sans KR", sans-serif;
 }
 
 html {
@@ -21,7 +23,7 @@ body {
 
 * {
   font-family: "Gowun Batang", "Noto Serif KR", serif;
-  line-height: 2;
+  line-height: 1.8;
 }
 
 main {

@@ -1,4 +1,5 @@
 main {
+  opacity: 0;
   &.fixed {
     width: 100%;
     height: 100vh;
@@ -11,17 +12,18 @@ main {
     transform: scale(0.5);
   }
   50% {
-    transform: scale(1);
+    transform: scale(1.5);
     opacity: 1;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(2);
     opacity: 0;
   }
 }
 @keyframes scaleCircle2 {
   100% {
-    transform: scale(0.4) translateY(-16px);
+    transform: scale(0.8);
+    background: rgba(245, 161, 133, 0.1);
   }
 }
 #intro {
@@ -35,15 +37,17 @@ main {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: rgba(255, 251, 245, 0.6);
+  // background: rgba(255, 251, 245, 0.6);
   z-index: 5;
+  // gif bg
   .img-box {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../images/bg_intro.gif") no-repeat center / cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/realtime-database-3298b.appspot.com/o/bg_intro.gif?alt=media&token=3220fc68-5ec2-4af2-a1be-2d62b5ba53e2")
+      no-repeat center / cover;
     opacity: 1;
     &:after {
       content: "";
@@ -53,37 +57,45 @@ main {
       background: rgba(255, 255, 255, 0.4);
     }
   }
+  // text
   .text-box {
     width: 100%;
     text-align: left;
     padding: 0.5rem 2.5rem;
     margin-top: -10rem;
+    color: var(--bs-dark);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     h1,
     h2 {
       position: relative;
-      color: var(--bs-dark);
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
       letter-spacing: 0.05rem;
       margin-bottom: 0;
     }
     h1 {
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
     h2 {
       font-size: 1rem;
-      line-height: 1.8;
+      line-height: 1.6;
     }
   }
+  // touch
   .touch-box {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 20vh;
+    padding: 0 0 5vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    small {
+      font-size: 0.8rem;
+      display: block;
+      margin-top: 1rem;
+    }
     .animate-box {
       width: 48px;
       height: 42px;
@@ -93,7 +105,7 @@ main {
         display: block;
         width: 100%;
         height: 100%;
-        background: url("../images/ic_touch.png") no-repeat center / 28px auto;
+        background: url("../images/ic_touch.png") no-repeat center / 24px auto;
         z-index: 1;
       }
       &:before {
@@ -104,7 +116,7 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: var(--bs-primary-opacity);
+        background: rgba(255, 255, 255, 0.4);
         border-radius: 100%;
         animation-name: scaleCircle1;
         animation-duration: 2s;
@@ -119,13 +131,13 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        background: var(--bs-primary-opacity);
-        border-radius: 100%;
-        transform: scale(0.28) translateY(-16px);
-        animation-name: scaleCircle2;
-        animation-duration: 0.5s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
+        // background: rgba(245, 161, 133, 0.9);
+        // border-radius: 100%;
+        // transform: scale(0.2) translateY(-14px);
+        // animation-name: scaleCircle2;
+        // animation-duration: 0.5s;
+        // animation-direction: alternate;
+        // animation-iteration-count: infinite;
         z-index: 0;
       }
     }
@@ -136,26 +148,22 @@ main {
     width: 0;
     height: 0;
   }
-  // display: none;
+  // display: none; //여기
 }
 
 #visual {
   position: fixed;
-  // top: 3rem;
-  // left: 1rem;
   top: 0;
   left: 0;
   z-index: 0;
   width: 100%;
   height: 100%;
-  // width: calc(100% - 2rem);
-  // height: calc(100% - 4rem);
-  // border-radius: 3rem;
   overflow: hidden;
   .img-box {
     width: 100%;
     height: 100%;
-    background: url("../images/visual2.jpg") no-repeat 51% -10px / cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/realtime-database-3298b.appspot.com/o/visual.jpg?alt=media&token=a6fc4787-1050-48cd-b0b4-8c5bc21ce78d")
+      no-repeat center / cover;
     filter: blur(10px);
     transform: scale(1.1);
   }
@@ -167,10 +175,10 @@ main {
 
 #bottom {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin-top: calc(100vh - 4rem);
   border-radius: 40px 40px 0 0;
-  // padding: 0 1rem;
+  padding: 0 1rem;
   .inner {
     border-radius: 3rem 3rem 0 0;
     padding: 1rem 0;
@@ -214,7 +222,7 @@ main {
     // 시
     &.poem {
       img {
-        max-width: 90px;
+        max-width: 80px;
       }
     }
     // 인사말
@@ -225,7 +233,7 @@ main {
         font-weight: 700;
       }
       .parents {
-        margin-top: 3rem;
+        margin-top: 2rem;
         width: 100%;
         padding: 2rem 0;
         border-top: 1px solid var(--bs-border);
@@ -272,9 +280,9 @@ main {
       height: 100vh;
       // margin: 0 -1rem;
       .swiper {
-        width: 100vw;
+        width: 100%;
         .swiper-wrapper {
-          height: 80vh;
+          height: 70vh;
           .swiper-slide {
             display: flex;
             justify-content: center;
@@ -286,34 +294,56 @@ main {
             }
           }
         }
-        .swiper-button-prev,
-        .swiper-button-next {
-          top: 0;
-          left: inherit;
-          margin: 0;
-          width: 36px;
-          height: 36px;
-          background-repeat: no-repeat;
-          background-size: 16px auto;
-          background-position: center;
-          &:after {
-            display: none;
+        .swiper-button-box {
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 1.5rem 0;
+          small {
+            position: relative;
+            z-index: 2;
+            font-size: 0.8rem;
+            color: var(--bs-secondary);
           }
-        }
-        .swiper-button-prev {
-          right: calc(36px + 1rem);
-          background-image: url("../images/ic_arrow_prev.png");
-        }
-        .swiper-button-next {
-          right: 1rem;
-          background-image: url("../images/ic_arrow_next.png");
+          & > div {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .swiper-button-prev,
+            .swiper-button-next {
+              position: inherit;
+              top: inherit;
+              left: inherit;
+              right: inherit;
+              margin: 0;
+              width: 36px;
+              height: 36px;
+              background-repeat: no-repeat;
+              background-size: 16px auto;
+              background-position: center;
+              margin-left: 0.5rem;
+              &:after {
+                display: none;
+              }
+            }
+            .swiper-button-prev {
+              background-image: url("../images/ic_arrow_prev.png");
+            }
+            .swiper-button-next {
+              background-image: url("../images/ic_arrow_next.png");
+            }
+          }
         }
         .swiper-pagination {
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          margin: 0 0 0 1rem;
-          bottom: 20px;
+          position: inherit;
+          left: inherit;
+          bottom: inherit;
+          margin: 0;
+          padding: 1rem 1.5rem;
           .swiper-pagination-bullet {
             width: 5px;
             height: 5px;
@@ -327,38 +357,60 @@ main {
     }
     // 달력
     &.calendar {
-      table {
-        width: 80%;
-        table-layout: fixed;
-        th {
-          font-weight: 400;
-          color: var(--bs-gray);
-          height: 60px;
-        }
-        td {
-          font-weight: 400;
-          height: 50px;
-          strong {
-            width: 32px;
-            height: 32px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--bs-primary);
-            border-radius: 100%;
+      .table-box {
+        border: 2px double var(--bs-border);
+        padding: 0.5rem 1.5rem 1rem;
+        table {
+          width: 100%;
+          table-layout: fixed;
+          th {
+            font-weight: 400;
+            color: var(--bs-gray);
+            height: 60px;
+          }
+          td {
+            font-weight: 400;
+            height: 50px;
+            strong {
+              width: 32px;
+              height: 32px;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              background: var(--bs-primary);
+              border-radius: 100%;
+            }
           }
         }
       }
     }
+    // 오시는 길
     &.path {
       padding: 5rem 0;
       .root_daum_roughmap {
         width: 100%;
+        .roughmap_maker_label:after {
+          display: none;
+        }
+        .roughmap_lebel_text {
+          background: #3396ff;
+          color: #fff;
+          border-radius: 100px;
+          padding: 0.5rem;
+          text-decoration: none;
+          font-family: var(--bs-font-sans-serif);
+          border: 3px solid #d7ebff;
+        }
+        .wrap_btn_zoom,
+        .wrap_controllers {
+          display: none;
+        }
       }
       .btn-area {
         width: 100%;
         padding: 1.5rem 1rem;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         a.btn {
@@ -368,18 +420,30 @@ main {
           height: 40px;
           width: 100%;
           margin: 0 0.25rem;
-          font-weight: 700;
-          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+          font-weight: 400;
+          font-size: 12px;
+          background-repeat: no-repeat;
+          background-size: auto 24px;
+          background-position: 0.75rem center;
+          font-family: var(--bs-font-sans-serif);
+          border: 1px solid var(--bs-gray);
+          color: var(--bs-dark);
+          border-radius: 0;
+          margin-bottom: 0.5rem;
+          // box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
           &:focus,
           &:active {
             border: none;
           }
           &.btn-naver {
-            background: #00c73c;
-            color: #fff;
+            // background-color: #fff;
+            background-image: url("../images/ic_navermap.png");
+            // color: #00c73c;
           }
           &.btn-kakao {
-            background: #f9e000;
+            background-image: url("../images/ic_kakaomap.png");
+            // background-color: #ffe500;
+            // color: #0081c7;
           }
         }
       }

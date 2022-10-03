@@ -39,8 +39,15 @@ $(".split").each(function () {
   $(this).html(tagWrapArr);
 });
 
+// intro animate
 setTimeout(function () {
   var introTl = gsap.timeline();
+  // 상진이와 승은이가 결혼합니다.
+  introTl.to("main", {
+    opacity: 1,
+    duration: 1.5,
+    ease: "power3.out",
+  });
   introTl.fromTo(
     "#intro .text-box h1 span",
     {
@@ -55,35 +62,39 @@ setTimeout(function () {
       ease: "power3.out",
     }
   );
+  // 2022년 11월 13일 일요일, 오후 1시 30분
   introTl.fromTo(
     "#intro .text-box .date",
     {
-      y: 5,
+      y: -5,
       opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
       duration: 0.5,
-      ease: "power3.out",
+      ease: "power1.in",
     }
   );
+  // 디엘웨딩홀, 아모르홀에서
   introTl.fromTo(
     "#intro .text-box .place",
     {
-      y: 5,
+      y: -5,
       opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
       duration: 0.5,
-      ease: "power3.out",
+      ease: "power1.in",
     }
   );
-  introTl.fromTo(introTouch, { opacity: 0, visibility: "hidden" }, { opacity: 1, visibility: "visible", duration: 0.5 });
-}, 200);
+  // 아이콘
+  introTl.fromTo(introTouch, { opacity: 0, visibility: "hidden" }, { opacity: 1, visibility: "visible", duration: 0.5, ease: "power1.in" });
+}, 500);
 
+// touch animate
 $("#intro .touch-box").click(function () {
   const audio = document.querySelector("audio");
   audio.play();
@@ -95,49 +106,28 @@ $("#intro .touch-box").click(function () {
     duration: 1.5,
     ease: "power1.out",
   });
-  introTouchTl.to(intro, {
-    borderRadius: "0 0 100px 100px",
-    duration: 0.5,
-    ease: "power3.out",
+  introTouchTl.to(introText, {
+    color: "#fff",
+    textShadow: "0 0 5px rgba(0,0,0, 0.2)",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
   });
   introTouchTl.to(intro, {
-    y: "-100%",
+    height: "50vh",
+    zIndex: 1,
     duration: 1.5,
     ease: "power4.out",
   });
   introTouchTl.to(introText, {
-    opacity: 0,
-    duration: 2,
-  });
-  // 스타일변경
-  introTouchTl.to(intro, {
-    height: "auto",
-    borderRadius: "0 0 40px 40px",
-    duration: 0,
-  });
-  introTouchTl.to(introText, {
-    display: "flex",
-    padding: "0.5rem 1.5rem",
     margin: 0,
-    duration: 0,
-    opacity: 1,
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
   });
-  introTouchTl.to(introH1, {
-    display: "none",
-    duration: 0,
-  });
-  introTouchTl.to(introH2, {
-    fontSize: "0.9rem",
-    marginLeft: "0.5rem",
-    duration: 0,
-  });
-  introTouchTl.to(introText, {
-    opacity: 1,
-    duration: 0,
-  });
-  //
+  // 비쥬얼
   introTouchTl.to(visual, {
-    delay: -3,
+    delay: -1.5,
     filter: "blur(0px)",
     duration: 2,
   });
@@ -148,7 +138,7 @@ $("#intro .touch-box").click(function () {
   // });
   setTimeout(function () {
     $("main").removeClass("fixed");
-  }, 6000);
+  }, 5000);
 });
 
 const swiper = new Swiper(".swiper", {
@@ -157,6 +147,7 @@ const swiper = new Swiper(".swiper", {
   speed: 600,
   threshold: 20,
   loop: true,
+  // autoHeight: true,
   pagination: {
     el: ".swiper-pagination",
   },
@@ -171,5 +162,5 @@ new daum.roughmap.Lander({
   timestamp: "1664461519874",
   key: "2bvqt",
   mapWidth: "100%",
-  mapHeight: "400",
+  mapHeight: "320",
 }).render();
