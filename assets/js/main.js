@@ -1,33 +1,18 @@
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+// let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+// document.documentElement.style.setProperty("--vh", `${vh}px`);
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-// let container = document.querySelector("main");
-
-// smooth scrolling container
-// let height;
-// function setHeight() {
-//   height = container.clientHeight;
-//   document.body.style.height = height + "px";
-// }
-// ScrollTrigger.addEventListener("refreshInit", setHeight);
-// gsap.to(container, {
-//   y: () => -(height - document.documentElement.clientHeight),
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: document.body,
-//     start: "top top",
-//     end: "bottom bottom",
-//     scrub: 2,
-//     invalidateOnRefresh: true,
-//   },
-// });
-
 let intro = document.querySelector("#intro");
 let introH1 = document.querySelector("#intro h1");
 let introH2 = document.querySelectorAll("#intro h2");
 let introImg = document.querySelector("#intro .img-box");
 let introText = document.querySelector("#intro .text-box");
-let introTouch = document.querySelector("#intro .touch-box");
+let introTouch = document.querySelector("#intro #touch-box");
+
 let visual = document.querySelector("#visual .img-box");
+let visualScroll = document.querySelector("#visual #scroll-box");
 
 // split
 $(".split").each(function () {
@@ -43,7 +28,7 @@ $(".split").each(function () {
 setTimeout(function () {
   var introTl = gsap.timeline();
   // 상진이와 승은이가 결혼합니다.
-  introTl.to("main", {
+  introTl.to("body", {
     opacity: 1,
     duration: 1.5,
     ease: "power3.out",
@@ -95,7 +80,7 @@ setTimeout(function () {
 }, 500);
 
 // touch animate
-$("#intro .touch-box").click(function () {
+$(introTouch).click(function () {
   const audio = document.querySelector("audio");
   audio.play();
 
@@ -108,28 +93,63 @@ $("#intro .touch-box").click(function () {
   });
   introTouchTl.to(introText, {
     color: "#fff",
-    textShadow: "0 0 5px rgba(0,0,0, 0.2)",
+    padding: "1.5rem 2rem",
+    borderColor: "rgba(255,255,255,0.5)",
+    background: "rgba(0,0,0,0.15)",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  introTouchTl.to("#intro .box-1", {
+    borderColor: "rgba(255,255,255,0.5)",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  introTouchTl.to("#intro .box-2", {
+    borderColor: "rgba(255,255,255,0.5)",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
   });
   introTouchTl.to(intro, {
-    height: "50vh",
-    zIndex: 1,
+    padding: "0 2rem",
+    delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
   });
+  introTouchTl.to(intro, {
+    delay: 0.5,
+    height: "46vh",
+    zIndex: 1,
+    duration: 1,
+    ease: "power2.out",
+  });
+  introTouchTl.to("#intro .box-1", {
+    delay: -1,
+    transform: "rotate(3deg)",
+    duration: 1,
+    ease: "power2.out",
+  });
+  introTouchTl.to("#intro .box-2", {
+    delay: -1,
+    transform: "rotate(-5deg)",
+    duration: 1,
+    ease: "power2.out",
+  });
   introTouchTl.to(introText, {
     margin: 0,
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
   // 비쥬얼
   introTouchTl.to(visual, {
-    delay: -1.5,
+    delay: -1,
     filter: "blur(0px)",
-    duration: 2,
+    transform: "scale(1)",
+    duration: 4,
+    ease: "power2.out",
   });
   // introTouchTl.to(intro, {
   //   y: 0,
@@ -138,7 +158,7 @@ $("#intro .touch-box").click(function () {
   // });
   setTimeout(function () {
     $("main").removeClass("fixed");
-  }, 5000);
+  }, 4500);
 });
 
 const swiper = new Swiper(".swiper", {
@@ -150,6 +170,7 @@ const swiper = new Swiper(".swiper", {
   // autoHeight: true,
   pagination: {
     el: ".swiper-pagination",
+    type: "fraction",
   },
   navigation: {
     nextEl: ".swiper-button-next",
