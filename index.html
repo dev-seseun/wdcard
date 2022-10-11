@@ -49,7 +49,7 @@
           <small>아이콘을 눌러 청첩장을 열어주세요🌻</small>
         </div>
         <audio id="bgm" loop>
-          <source src="/assets/audio.mp3" type="audio/mp3" />
+          <source src="/assets/bgm.mp3" type="audio/mp3" />
         </audio>
         <!-- <audio id="bgm" loop>
           <source src="https://docs.google.com/uc?export=open&id=1ZQfwpIVYThDDPLgRmM1Y2IloJnn1I_qo" type="audio/mp3" />
@@ -260,8 +260,8 @@
             <div class="title-area">
               <h6>디엘웨딩홀, 아모르홀에서</h6>
               <p>부산 동구 조방로 14 동일타워 3층</p>
-              <button class="btn-copy mt-3">주소복사</button>
-              <input type="hidden" class="data-copy" value="부산 동구 조방로 14 동일타워" />
+              <button class="btn-copy mt-3" onclick="copyToClipboard('#data-addr')">주소복사</button>
+              <input type="text" class="copy-input" id="data-addr" value="부산 동구 조방로 14 동일타워" />
             </div>
             <div class="map-box">
               <div id="daumRoughmapContainer1664461519874" class="root_daum_roughmap root_daum_roughmap_landing"></div>

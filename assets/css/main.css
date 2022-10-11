@@ -630,6 +630,15 @@ main.fixed {
   justify-content: center;
 }
 
+.copy-input {
+  display: block;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
 .toast {
   width: 160px;
   position: fixed;

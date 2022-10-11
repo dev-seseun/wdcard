@@ -203,11 +203,13 @@ new daum.roughmap.Lander({
   mapHeight: "320",
 }).render();
 
-$(".btn-copy").click(function () {
-  $(this).siblings(".data-copy").select();
-  const copy = document.execCommand("copy");
-  if (copy) {
-    $(".toast").toast("show");
-  }
-});
 // }
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  $(".toast").toast("show");
+}
