@@ -1,24 +1,27 @@
-// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-// let vh = window.innerHeight * 0.01;
-// Then we set the value in the --vh custom property to the root of the document
-// document.documentElement.style.setProperty("--vh", `${vh}px`);
+// pc일 경우 화면 전환
+const filter = "win16|win32|win64|mac|macintel";
+// if (navigator.platform && filter.indexOf(navigator.platform.toLowerCase()) >= 0) {
+//   $("body").css("opacity", 1).html('<div class="pc-description">모바일로 확인해주세요🌻</div>');
+// } else {
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-let intro = document.querySelector("#intro");
-let introH1 = document.querySelector("#intro h1");
-let introH2 = document.querySelectorAll("#intro h2");
-let introImg = document.querySelector("#intro .img-box");
-let introText = document.querySelector("#intro .text-box");
-let introTouch = document.querySelector("#intro #touch-box");
+const intro = document.querySelector("#intro");
+const introH1 = document.querySelector("#intro h1");
+const introH2 = document.querySelectorAll("#intro h2");
+const introImg = document.querySelector("#intro .img-box");
+const introText = document.querySelector("#intro .text-box");
+const introTouch = document.querySelector("#intro #touch-box");
 
-let visual = document.querySelector("#visual .img-box");
-let visualScroll = document.querySelector("#visual #scroll-box");
+const visual = document.querySelector("#visual .img-box");
+const visualScroll = document.querySelector("#visual #scroll-box");
 
 // split
 $(".split").each(function () {
-  var charArr = $(this).text().split("");
-  var tagWrapArr = "";
-  for (var i = 0; i < charArr.length; i++) {
+  const charArr = $(this).text().split("");
+  let tagWrapArr = "";
+  for (let i = 0; i < charArr.length; i++) {
     tagWrapArr += `<span>${charArr[i]}</span>`;
   }
   $(this).html(tagWrapArr);
@@ -26,9 +29,10 @@ $(".split").each(function () {
 
 // intro animate
 setTimeout(function () {
-  var introTl = gsap.timeline();
+  const introTl = gsap.timeline();
   // 상진이와 승은이가 결혼합니다.
   introTl.to("body", {
+    delay: 1,
     opacity: 1,
     duration: 1.5,
     ease: "power3.out",
@@ -84,7 +88,7 @@ $(introTouch).click(function () {
   const audio = document.querySelector("audio");
   audio.play();
 
-  var introTouchTl = gsap.timeline();
+  const introTouchTl = gsap.timeline();
   introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.5 });
   introTouchTl.to(introImg, {
     opacity: 0,
@@ -94,14 +98,25 @@ $(introTouch).click(function () {
   introTouchTl.to(introText, {
     color: "#fff",
     padding: "1.5rem 2rem",
-    borderColor: "rgba(255,255,255,0.5)",
     background: "rgba(0,0,0,0.15)",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
   });
+  introTouchTl.to(introH1, {
+    transform: "scale(0.9)",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  introTouchTl.to(introH2, {
+    transform: "scale(0.9)",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
+  });
   introTouchTl.to("#intro .box-1", {
-    borderColor: "rgba(255,255,255,0.5)",
+    borderColor: "rgba(255,255,255,0.75)",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
@@ -127,13 +142,13 @@ $(introTouch).click(function () {
   });
   introTouchTl.to("#intro .box-1", {
     delay: -1,
-    transform: "rotate(3deg)",
+    transform: "translate(2px,2px)",
     duration: 1,
     ease: "power2.out",
   });
   introTouchTl.to("#intro .box-2", {
     delay: -1,
-    transform: "rotate(-5deg)",
+    transform: "translate(-2px,-2px)",
     duration: 1,
     ease: "power2.out",
   });
@@ -161,12 +176,14 @@ $(introTouch).click(function () {
   }, 4500);
 });
 
+// swiper
 const swiper = new Swiper(".swiper", {
   effect: "fade",
   zoom: true,
   speed: 600,
   threshold: 20,
   loop: true,
+  // lazy: true,
   // autoHeight: true,
   pagination: {
     el: ".swiper-pagination",
@@ -185,3 +202,12 @@ new daum.roughmap.Lander({
   mapWidth: "100%",
   mapHeight: "320",
 }).render();
+
+$(".btn-copy").click(function () {
+  $(this).siblings(".data-copy").select();
+  const copy = document.execCommand("copy");
+  if (copy) {
+    $(".toast").toast("show");
+  }
+});
+// }

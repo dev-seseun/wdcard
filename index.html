@@ -5,20 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
     <title>상진이와 승은이가 결혼합니다🌻</title>
 
-    <!-- meta -->
-    <meta property="og:url" content="http://seseun.world/we-get-marry" />
-    <meta property="og:title" content="상진이와 승은이가 결혼합니다🌻" />
+    <!-- meta: og -->
+    <meta property="og:url" content="http://seseun.world/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/images/visual.jpg" />
-    <meta property="og:description" content="2022년 11월 13일 일요일, 오후 1시 30분\n디엘웨딩홀, 아모르홀에서" />
+    <meta property="og:title" content="상진이와 승은이가 결혼합니다🌻" />
+    <meta property="og:image" content="http://seseun.world/assets/images/og_image.jpg" />
+    <meta property="og:description" content="22.11.13(일) 13:30 디엘웨딩홀(아모르홀)" />
 
-    <link rel="stylesheet" href="/vendor/bootstrap-5-2-2-min.css" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- custom -->
     <link rel="stylesheet" href="/vendor/material-icons.css" />
     <link rel="stylesheet" href="/assets/css/reset.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   </head>
 
+  <!-- 계좌부분, 티맵연결, 하단계좌, 복사기능 -->
   <body>
     <main class="fixed">
       <!-- intro -->
@@ -37,11 +48,14 @@
           </div>
           <small>아이콘을 눌러 청첩장을 열어주세요🌻</small>
         </div>
-        <audio
-          id="bgm"
-          src="https://firebasestorage.googleapis.com/v0/b/realtime-database-3298b.appspot.com/o/bgm.mp3?alt=media&token=891f6d04-ac7f-4159-8cdd-399aee62efd3"
-          loop
-        ></audio>
+        <audio id="bgm" loop>
+          <source src="/assets/audio.mp3" type="audio/mp3" />
+        </audio>
+        <!-- <audio id="bgm" loop>
+          <source src="https://docs.google.com/uc?export=open&id=1ZQfwpIVYThDDPLgRmM1Y2IloJnn1I_qo" type="audio/mp3" />
+        </audio> -->
+        <!-- <audio id="bgm" src="https://drive.google.com/file/d/1ZQfwpIVYThDDPLgRmM1Y2IloJnn1I_qo/view?usp=sharing" loop></audio> -->
+        <!-- https://firebasestorage.googleapis.com/v0/b/realtime-database-3298b.appspot.com/o/bgm.mp3?alt=media&token=891f6d04-ac7f-4159-8cdd-399aee62efd3 -->
       </section>
 
       <!-- visual -->
@@ -127,6 +141,9 @@
                 </div>
                 <div class="swiper-slide">
                   <div class="swiper-zoom-container"><img src="/assets/images/11.jpg" /></div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-zoom-container"><img src="/assets/images/16.jpg" /></div>
                 </div>
                 <div class="swiper-slide">
                   <div class="swiper-zoom-container"><img src="/assets/images/15.jpg" /></div>
@@ -243,11 +260,17 @@
             <div class="title-area">
               <h6>디엘웨딩홀, 아모르홀에서</h6>
               <p>부산 동구 조방로 14 동일타워 3층</p>
+              <button class="btn-copy mt-3">주소복사</button>
+              <input type="hidden" class="data-copy" value="부산 동구 조방로 14 동일타워" />
             </div>
-            <div id="daumRoughmapContainer1664461519874" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+            <div class="map-box">
+              <div id="daumRoughmapContainer1664461519874" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+              <div class="mask"></div>
+            </div>
             <div class="btn-area">
-              <a class="btn btn-naver" href="https://naver.me/FiLOF48l" target="_blank"><strong>네이버지도</strong>로 길찾기</a>
-              <a class="btn btn-kakao" href="http://kko.to/43VsXx4Iq" target="_blank"><strong>카카오맵</strong>으로 길찾기</a>
+              <a class="btn btn-naver" href="https://naver.me/FiLOF48l" target="_blank"><strong>네이버지도</strong><span>길찾기</span></a>
+              <a class="btn btn-kakao" href="http://kko.to/43VsXx4Iq" target="_blank"><strong>카카오맵</strong><span>길찾기</span></a>
+              <a class="btn btn-tmap" href="http://kko.to/43VsXx4Iq" target="_blank"><strong>티맵</strong><span>길찾기</span></a>
             </div>
             <p class="detail">
               <strong>주차</strong>
@@ -262,33 +285,103 @@
 
           <article class="pay">
             <div class="title-area"><h6>감사한 마음, 소중히 간직하겠습니다.</h6></div>
-            <div>
-              신랑측
-              <strong>이형우</strong>
-              <strong>서진희</strong>
-              <strong>이상진</strong>
-            </div>
-            <div>
-              신부측
-              <strong>이상갑</strong>
-              <strong>김희순</strong>
-              <strong>이승은</strong>
+            <div class="pay-box">
+              <div class="accordion" id="acd-pay">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="btn-groom">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cont-groom"
+                      aria-expanded="false"
+                      aria-controls="cont-groom"
+                    >
+                      신랑측
+                    </button>
+                  </h2>
+                  <div id="cont-groom" class="accordion-collapse collapse" aria-labelledby="btn-groom" data-bs-parent="#acd-pay">
+                    <div class="accordion-body">
+                      <dl>
+                        <dt>이상진 국민 73110200115891</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                      <dl>
+                        <dt>이형우 수협 202051097614</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                      <dl>
+                        <dt>서진희 농협 3561048759283</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="btn-bride">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#cont-bride"
+                      aria-expanded="false"
+                      aria-controls="cont-bride"
+                    >
+                      신부측
+                    </button>
+                  </h2>
+                  <div id="cont-bride" class="accordion-collapse collapse" aria-labelledby="btn-bride" data-bs-parent="#acd-pay">
+                    <div class="accordion-body">
+                      <dl>
+                        <dt>이승은 카카오뱅크 3333069727369</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                      <dl>
+                        <dt>이상갑 부산 072120375885</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                      <dl>
+                        <dt>김희순 국민 112010403834</dt>
+                        <dd><button>복사</button></dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
         </div>
       </section>
+      <div class="toast" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="1000">
+        <div class="toast-body">복사되었습니다😊</div>
+      </div>
     </main>
 
-    <script type="text/javascript" src="/vendor/jquery-3-6-0-min.js"></script>
-    <script type="text/javascript" src="/vendor/bootstrap-5-2-2-min.js"></script>
+    <!-- jquery.3.6.1 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
 
+    <!-- bootstrap.5.2.2 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- gsap.3.11.0 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/TextPlugin.min.js"></script>
 
+    <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    <!-- kakaomap -->
     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
     <script type="text/javascript" src="/assets/js/main.js"></script>
