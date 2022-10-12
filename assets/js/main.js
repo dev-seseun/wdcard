@@ -33,12 +33,11 @@ articles.forEach((article) => {
   gsap.to(article, {
     autoAlpha: 1,
     y: 0,
-    duration: 1,
-    ease: "power2.out",
+    duration: 0.75,
+    ease: "power1.inOut",
     scrollTrigger: {
       trigger: article,
-      start: "top center",
-      marker: true,
+      start: "top bottom-=160px",
     },
   });
 });
@@ -64,7 +63,7 @@ setTimeout(function () {
       opacity: 1,
       stagger: 0.2,
       duration: 0.5,
-      ease: "power3.out",
+      ease: "power1.in",
     }
   );
   // 2022년 11월 13일 일요일, 오후 1시 30분
@@ -77,6 +76,7 @@ setTimeout(function () {
     {
       y: 0,
       opacity: 1,
+      delay: 0.25,
       duration: 0.5,
       ease: "power1.in",
     }
@@ -91,6 +91,7 @@ setTimeout(function () {
     {
       y: 0,
       opacity: 1,
+      delay: 0.25,
       duration: 0.5,
       ease: "power1.in",
     }
@@ -125,12 +126,14 @@ $(introTouch).click(function () {
   });
   introTouchTl.to(introH1, {
     transform: "scale(0.9)",
+    fontWeight: 700,
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
   });
   introTouchTl.to(introH2, {
     transform: "scale(0.85)",
+    marginTop: "-4px",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
@@ -179,7 +182,7 @@ $(introTouch).click(function () {
     margin: 0,
     delay: -1,
     duration: 1,
-    ease: "power4.out",
+    ease: "power2.out",
   });
   // 비쥬얼
   introTouchTl.to(visual, {

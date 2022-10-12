@@ -83,6 +83,7 @@ main.fixed {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   position: relative;
   border: 1px solid transparent;
+  margin-top: -10rem;
 }
 
 #intro .text-box .box-1,
@@ -271,7 +272,7 @@ main.fixed {
   margin-right: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(36px);
+  transform: translateY(24px);
 }
 
 #bottom article .title-area {
