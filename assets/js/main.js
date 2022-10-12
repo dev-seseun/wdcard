@@ -27,6 +27,22 @@ $(".split").each(function () {
   $(this).html(tagWrapArr);
 });
 
+// article fadein
+const articles = gsap.utils.toArray("#bottom article");
+articles.forEach((article) => {
+  gsap.to(article, {
+    autoAlpha: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: article,
+      start: "top center",
+      marker: true,
+    },
+  });
+});
+
 // intro animate
 setTimeout(function () {
   const introTl = gsap.timeline();

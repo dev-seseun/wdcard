@@ -79,7 +79,6 @@ main.fixed {
   max-width: 500px;
   text-align: center;
   padding: 0.5rem 2.5rem;
-  margin-top: -10rem;
   color: var(--bs-dark);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
   position: relative;
@@ -167,7 +166,7 @@ main.fixed {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0 0 5vh;
+  padding: 0 0 calc(var(--vh, 1vh) * 5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,7 +208,7 @@ main.fixed {
 }
 
 #visual #scroll-box {
-  padding: 0 0 12vh;
+  padding: 0 0 calc(var(--vh, 1vh) * 12);
 }
 
 #visual #scroll-box .animate-box i {
@@ -270,6 +269,9 @@ main.fixed {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(36px);
 }
 
 #bottom article .title-area {
