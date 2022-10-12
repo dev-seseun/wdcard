@@ -101,7 +101,7 @@ $(introTouch).click(function () {
   // 텍스트박스변환
   introTouchTl.to(introText, {
     color: "#fff",
-    padding: "1.5rem 2rem",
+    padding: "1.25rem 2rem",
     background: "rgba(0,0,0,0.15)",
     delay: -1.5,
     duration: 1.5,
@@ -141,7 +141,7 @@ $(introTouch).click(function () {
   // 높이조정
   introTouchTl.to(intro, {
     delay: 0.5,
-    height: "calc(var(--vh, 1vh) * 42)",
+    height: "42%",
     zIndex: 1,
     duration: 1,
     ease: "power2.out",
