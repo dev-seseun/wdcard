@@ -544,6 +544,10 @@ main.fixed {
   display: none;
 }
 
+#bottom article.direction .root_daum_roughmap .roughmap_maker_label {
+  border: 0;
+}
+
 #bottom article.direction .root_daum_roughmap .roughmap_lebel_text {
   background: #3396ff;
   color: #fff;

@@ -498,6 +498,9 @@ main {
         .roughmap_maker_label:after {
           display: none;
         }
+        .roughmap_maker_label {
+          border: 0;
+        }
         .roughmap_lebel_text {
           background: #3396ff;
           color: #fff;

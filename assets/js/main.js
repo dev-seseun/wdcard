@@ -108,13 +108,13 @@ $(introTouch).click(function () {
     ease: "power4.out",
   });
   introTouchTl.to(introH1, {
-    transform: "scale(0.95)",
+    transform: "scale(0.9)",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
   });
   introTouchTl.to(introH2, {
-    transform: "scale(0.95)",
+    transform: "scale(0.85)",
     delay: -1.5,
     duration: 1.5,
     ease: "power4.out",
