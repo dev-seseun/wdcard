@@ -205,7 +205,8 @@ const swiper = new Swiper(".swiper", {
   speed: 600,
   threshold: 20,
   loop: true,
-  // lazy: true,
+  preloadImages: false,
+  lazy: true,
   // autoHeight: true,
   pagination: {
     el: ".swiper-pagination",
