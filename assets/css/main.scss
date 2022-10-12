@@ -432,6 +432,7 @@ main {
             font-weight: 400;
             height: 50px;
             strong {
+              position: relative;
               width: 32px;
               height: 32px;
               display: inline-flex;
@@ -439,6 +440,25 @@ main {
               align-items: center;
               background: var(--bs-primary);
               border-radius: 100%;
+              &:before {
+                content: "";
+                display: block;
+                width: 32px;
+                height: 32px;
+                position: absolute;
+                top: calc(50% - 16px);
+                left: calc(50% - 16px);
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background: var(--bs-primary-opacity);
+                border-radius: 100%;
+                transform: scale(1);
+                animation-name: scaleCircle;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                z-index: -1;
+              }
             }
           }
         }
@@ -598,17 +618,24 @@ main {
       }
     }
 
-    &.footer {
-      padding: 1rem 0;
-      background: var(--bs-gray);
-      color: var(--bs-white);
+    &.goodbye {
+      margin-bottom: -3rem;
     }
+    // &.footer {
+    //   padding: 1rem 0;
+    //   background: var(--bs-gray);
+    //   color: var(--bs-white);
+    // }
   }
   .btn-copy {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
     color: var(--bs-gray-dark);
     background: var(--bs-btn);
     border: 1px solid var(--bs-border);
-    padding: 0.25rem 1rem;
+    padding: 0 1rem;
     border-radius: 0.25rem;
     font-weight: 400;
     font-size: 11px;
