@@ -124,9 +124,15 @@ main.fixed {
 }
 
 #intro #touch-box small {
-  font-size: 0.8rem;
+  font-size: 12px;
   display: block;
   margin-top: 1rem;
+  text-align: center;
+}
+
+#intro #touch-box small span {
+  font-size: 11px;
+  color: var(--bs-gray-dark);
 }
 
 #intro #touch-box .animate-box i {
