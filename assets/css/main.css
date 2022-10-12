@@ -736,12 +736,12 @@ main.fixed {
   left: calc(50% - 70px);
   background: rgba(0, 0, 0, 0.6);
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 2rem;
   z-index: 5;
 }
 
 .toast .toast-body {
-  padding: 0.5rem 0;
+  padding: 0.4rem 0.5rem 0.4rem 0.75rem;
   font-family: var(--bs-font-sans-serif);
   font-size: 1rem;
   color: var(--bs-white);
