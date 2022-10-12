@@ -372,7 +372,7 @@ main.fixed {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../images/bg_bottom.jpg") repeat;
+  background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
 }
 
 #bottom article.album .swiper .swiper-wrapper .swiper-slide img {
@@ -386,7 +386,7 @@ main.fixed {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem 0.5rem;
-  background: url("../images/bg_bottom.jpg") repeat;
+  background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
   margin-bottom: -1px;
   z-index: 1;
 }
@@ -394,7 +394,7 @@ main.fixed {
 #bottom article.album .swiper .swiper-button-box small {
   position: relative;
   z-index: 2;
-  font-size: 0.8rem;
+  font-size: 11px;
   color: var(--bs-secondary);
 }
 
@@ -617,25 +617,29 @@ main.fixed {
   background: var(--bs-primary-opacity);
 }
 
+#bottom article.account {
+  max-width: 400px;
+}
+
 #bottom article.account .account-box {
   width: 100%;
 }
 
 #bottom article.account .account-box .accordion {
-  --bs-accordion-border-radius: 0;
-  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-border-radius: 0.5rem;
+  --bs-accordion-inner-border-radius: 0.5rem;
   --bs-accordion-active-bg: transparent;
   --bs-accordion-btn-focus-box-shadow: none;
-  --bs-accordion-border-width: 0;
+  --bs-accordion-border-width: 1px;
+  --bs-accordion-border-color: var(--bs-border);
   --bs-accordion-bg: transparent;
   --bs-accordion-btn-bg: transparent;
-  border-bottom: 1px solid var(--bs-border);
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header {
   background-repeat: no-repeat;
   background-size: 24px auto;
-  background-position: left center;
+  background-position: 0.5rem center;
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header#btn-groom {
@@ -647,9 +651,8 @@ main.fixed {
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header .accordion-button {
+  padding: 1rem 1rem 1rem 3rem;
   color: var(--dark);
-  border-top: 1px solid var(--bs-border);
-  padding: 1rem 0.5rem 1rem 2rem;
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header .accordion-button::after {
@@ -658,6 +661,7 @@ main.fixed {
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
   font-weight: 700;
+  box-shadow: none;
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
@@ -665,8 +669,8 @@ main.fixed {
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-body {
+  padding: 1rem;
   border-top: 1px solid var(--bs-border);
-  padding: 1.25rem 0.5rem;
 }
 
 #bottom article.account .account-box .accordion .accordion-item .accordion-body dl {

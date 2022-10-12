@@ -348,7 +348,7 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: url("../images/bg_bottom.jpg") repeat;
+            background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
             img {
               max-width: 100%;
               object-fit: cover;
@@ -361,13 +361,13 @@ main {
           justify-content: space-between;
           align-items: center;
           padding: 1rem 1.5rem 0.5rem;
-          background: url("../images/bg_bottom.jpg") repeat;
+          background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
           margin-bottom: -1px;
           z-index: 1;
           small {
             position: relative;
             z-index: 2;
-            font-size: 0.8rem;
+            font-size: 11px;
             color: var(--bs-secondary);
           }
           & > div {
@@ -566,22 +566,23 @@ main {
 
     // account
     &.account {
+      max-width: 400px;
       .account-box {
         width: 100%;
         .accordion {
-          --bs-accordion-border-radius: 0;
-          --bs-accordion-inner-border-radius: 0;
+          --bs-accordion-border-radius: 0.5rem;
+          --bs-accordion-inner-border-radius: 0.5rem;
           --bs-accordion-active-bg: transparent;
           --bs-accordion-btn-focus-box-shadow: none;
-          --bs-accordion-border-width: 0;
+          --bs-accordion-border-width: 1px;
+          --bs-accordion-border-color: var(--bs-border);
           --bs-accordion-bg: transparent;
           --bs-accordion-btn-bg: transparent;
-          border-bottom: 1px solid var(--bs-border);
           .accordion-item {
             .accordion-header {
               background-repeat: no-repeat;
               background-size: 24px auto;
-              background-position: left center;
+              background-position: 0.5rem center;
               &#btn-groom {
                 background-image: url("../images/ic_groom.png");
               }
@@ -589,14 +590,14 @@ main {
                 background-image: url("../images/ic_bride.png");
               }
               .accordion-button {
+                padding: 1rem 1rem 1rem 3rem;
                 color: var(--dark);
-                border-top: 1px solid var(--bs-border);
-                padding: 1rem 0.5rem 1rem 2rem;
                 &::after {
                   opacity: 0.5;
                 }
                 &:not(.collapsed) {
                   font-weight: 700;
+                  box-shadow: none;
                   &::after {
                     background-image: var(--bs-accordion-btn-icon);
                   }
@@ -604,8 +605,8 @@ main {
               }
             }
             .accordion-body {
+              padding: 1rem;
               border-top: 1px solid var(--bs-border);
-              padding: 1.25rem 0.5rem;
               dl {
                 display: flex;
                 justify-content: space-between;
