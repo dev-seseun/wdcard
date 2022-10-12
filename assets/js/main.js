@@ -85,16 +85,20 @@ setTimeout(function () {
 
 // touch animate
 $(introTouch).click(function () {
+  // 노래재생
   const audio = document.querySelector("audio");
   audio.play();
 
   const introTouchTl = gsap.timeline();
+  // 터치버튼감춤
   introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.5 });
+  // gif 이미지사라짐
   introTouchTl.to(introImg, {
     opacity: 0,
     duration: 1.5,
     ease: "power1.out",
   });
+  // 텍스트박스변환
   introTouchTl.to(introText, {
     color: "#fff",
     padding: "1.5rem 2rem",
@@ -115,6 +119,13 @@ $(introTouch).click(function () {
     duration: 1.5,
     ease: "power4.out",
   });
+  introTouchTl.to(intro, {
+    padding: "0 2rem",
+    delay: -1.5,
+    duration: 1.5,
+    ease: "power4.out",
+  });
+  // 라인색상변화
   introTouchTl.to("#intro .box-1", {
     borderColor: "rgba(255,255,255,0.75)",
     delay: -1.5,
@@ -127,19 +138,15 @@ $(introTouch).click(function () {
     duration: 1.5,
     ease: "power4.out",
   });
-  introTouchTl.to(intro, {
-    padding: "0 2rem",
-    delay: -1.5,
-    duration: 1.5,
-    ease: "power4.out",
-  });
+  // 높이조정
   introTouchTl.to(intro, {
     delay: 0.5,
-    height: "46vh",
+    height: "42vh",
     zIndex: 1,
     duration: 1,
     ease: "power2.out",
   });
+  // 라인위치변화
   introTouchTl.to("#intro .box-1", {
     delay: -1,
     transform: "translate(2px,2px)",
@@ -166,11 +173,7 @@ $(introTouch).click(function () {
     duration: 4,
     ease: "power2.out",
   });
-  // introTouchTl.to(intro, {
-  //   y: 0,
-  //   duration: 1,
-  //   ease: "power4.out",
-  // });
+  // 스크롤 가능
   setTimeout(function () {
     $("main").removeClass("fixed");
   }, 4500);
@@ -205,6 +208,7 @@ new daum.roughmap.Lander({
 
 // }
 
+// 복사기능
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);

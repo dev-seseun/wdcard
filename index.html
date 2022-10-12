@@ -6,8 +6,8 @@
     <title>상진이와 승은이가 결혼합니다🌻</title>
 
     <!-- meta: og -->
-    <meta property="og:url" content="http://seseun.world/" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://seseun.world/" />
     <meta property="og:title" content="상진이와 승은이가 결혼합니다🌻" />
     <meta property="og:image" content="http://seseun.world/assets/images/og_image.jpg" />
     <meta property="og:description" content="22.11.13(일) 13:30 디엘웨딩홀(아모르홀)" />
@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
   </head>
 
-  <!-- 계좌부분, 티맵연결, 하단계좌, 복사기능 -->
   <body>
     <main class="fixed">
       <!-- intro -->
@@ -72,6 +71,7 @@
       <!-- bottom -->
       <section id="bottom">
         <div class="inner">
+          <!-- poem -->
           <article class="poem">
             <img src="/assets/images/illust.png" />
             <p class="mt-5">
@@ -81,6 +81,7 @@
             </p>
           </article>
 
+          <!-- greeting -->
           <article class="greeting no-bar">
             <p>
               서로를 사랑하며 함께하는 다섯 번째의 가을,<br />
@@ -108,6 +109,7 @@
             </div>
           </article>
 
+          <!-- album -->
           <article class="album no-bar">
             <div class="swiper">
               <div class="swiper-button-box">
@@ -189,9 +191,10 @@
             </div>
           </article>
 
+          <!-- calendar -->
           <article class="calendar">
             <div class="title-area">
-              <h6>2022년 11월 13일</h6>
+              <h6>2022년 11월 13일 일요일</h6>
               <p>오후 1시 30분</p>
             </div>
             <div class="table-box">
@@ -256,21 +259,21 @@
             </div>
           </article>
 
-          <article class="path">
+          <!-- direction -->
+          <article class="direction">
             <div class="title-area">
               <h6>디엘웨딩홀, 아모르홀에서</h6>
-              <p>부산 동구 조방로 14 동일타워 3층</p>
-              <button class="btn-copy mt-3" onclick="copyToClipboard('#data-addr')">주소복사</button>
-              <input type="text" class="copy-input" id="data-addr" value="부산 동구 조방로 14 동일타워" />
+              <p><span id="copy-addr">부산 동구 조방로 14 동일타워</span> 3층</p>
+              <button class="btn-copy mt-3" onclick="copyToClipboard('#copy-addr')">주소복사</button>
             </div>
             <div class="map-box">
               <div id="daumRoughmapContainer1664461519874" class="root_daum_roughmap root_daum_roughmap_landing"></div>
               <div class="mask"></div>
             </div>
             <div class="btn-area">
-              <a class="btn btn-naver" href="https://naver.me/FiLOF48l" target="_blank"><strong>네이버지도</strong><span>길찾기</span></a>
-              <a class="btn btn-kakao" href="http://kko.to/43VsXx4Iq" target="_blank"><strong>카카오맵</strong><span>길찾기</span></a>
-              <a class="btn btn-tmap" href="http://kko.to/43VsXx4Iq" target="_blank"><strong>티맵</strong><span>길찾기</span></a>
+              <a class="btn btn-tmap" href="https://surl.tmap.co.kr/95f2effa" target="_blank">티맵</a>
+              <a class="btn btn-naver mx-2" href="https://naver.me/FiLOF48l" target="_blank">네이버지도</a>
+              <a class="btn btn-kakao" href="http://kko.to/43VsXx4Iq" target="_blank">카카오맵</a>
             </div>
             <p class="detail">
               <strong>주차</strong>
@@ -283,10 +286,13 @@
             </p>
           </article>
 
-          <article class="pay">
-            <div class="title-area"><h6>감사한 마음, 소중히 간직하겠습니다.</h6></div>
-            <div class="pay-box">
-              <div class="accordion" id="acd-pay">
+          <!-- account -->
+          <article class="account">
+            <div class="title-area">
+              <h6>감사한 마음, 소중히 간직하겠습니다.</h6>
+            </div>
+            <div class="account-box">
+              <div class="accordion" id="acd-account">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="btn-groom">
                     <button
@@ -297,22 +303,22 @@
                       aria-expanded="false"
                       aria-controls="cont-groom"
                     >
-                      신랑측
+                      신랑(이상진) 측
                     </button>
                   </h2>
-                  <div id="cont-groom" class="accordion-collapse collapse" aria-labelledby="btn-groom" data-bs-parent="#acd-pay">
+                  <div id="cont-groom" class="accordion-collapse collapse" aria-labelledby="btn-groom" data-bs-parent="#acd-account">
                     <div class="accordion-body">
                       <dl>
-                        <dt>이상진 국민 73110200115891</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>이상진<span id="account-groom">국민 73110200115891</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-groom')">복사</button></dd>
                       </dl>
                       <dl>
-                        <dt>이형우 수협 202051097614</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>이형우<span id="account-groom-d">수협 202051097614</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-groom-d')">복사</button></dd>
                       </dl>
                       <dl>
-                        <dt>서진희 농협 3561048759283</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>서진희<span id="account-groom-m">농협 3561048759283</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-groom-m')">복사</button></dd>
                       </dl>
                     </div>
                   </div>
@@ -327,27 +333,39 @@
                       aria-expanded="false"
                       aria-controls="cont-bride"
                     >
-                      신부측
+                      신부(이승은) 측
                     </button>
                   </h2>
-                  <div id="cont-bride" class="accordion-collapse collapse" aria-labelledby="btn-bride" data-bs-parent="#acd-pay">
+                  <div id="cont-bride" class="accordion-collapse collapse" aria-labelledby="btn-bride" data-bs-parent="#acd-account">
                     <div class="accordion-body">
                       <dl>
-                        <dt>이승은 카카오뱅크 3333069727369</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>이승은<span id="account-bride">신한 110531949700</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-bride')">복사</button></dd>
                       </dl>
                       <dl>
-                        <dt>이상갑 부산 072120375885</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>이상갑<span id="account-bride-d">부산 072120375885</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-bride-d')">복사</button></dd>
                       </dl>
                       <dl>
-                        <dt>김희순 국민 112010403834</dt>
-                        <dd><button>복사</button></dd>
+                        <dt>김희순<span id="account-bride-m">국민 112010403834</span></dt>
+                        <dd><button class="btn-copy" onclick="copyToClipboard('#account-bride-m')">복사</button></dd>
                       </dl>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </article>
+          <article class="goodbye no-bar pb-3">
+            <div class="title-area">
+              <p>
+                코로나19로 인하여 참석에 대한<br />
+                부담을 갖지 않으시길 바라는 마음입니다.<br />
+                멀리서나마 축복해 주시면 그 마음 안고<br />
+                감사히 여기며 살겠습니다.<br /><br />
+                감사합니다.<br /><br /><br /><br />
+                🌻 상진, 승은 올림 🌻
+              </p>
             </div>
           </article>
         </div>

@@ -48,8 +48,8 @@ main {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  // background: rgba(255, 251, 245, 0.6);
   z-index: 5;
+  // display: none;
   // gif bg
   .img-box {
     position: absolute;
@@ -146,7 +146,6 @@ main {
     width: 0;
     height: 0;
   }
-  // display: none; //여기
 }
 
 .animate-area {
@@ -219,16 +218,15 @@ main {
   position: relative;
   z-index: 2;
   border-radius: 40px 40px 0 0;
-  padding: 0 1rem;
-  max-width: 600px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: calc(100vh - 4rem);
-  margin-top: calc((var(--vh, 1vh) * 100) - 4rem);
+  margin-top: calc(100vh - 5rem);
+  margin-top: calc((var(--vh, 1vh) * 100) - 5rem);
+  background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
+  border-radius: 3rem 3rem 0 0;
   .inner {
-    border-radius: 3rem 3rem 0 0;
-    padding: 1rem 0;
-    background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
+    margin: 0 auto;
   }
   article {
     display: flex;
@@ -236,8 +234,10 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 5rem 1.5rem;
     position: relative;
+    margin-left: auto;
+    margin-right: auto;
     .title-area {
       margin-bottom: 2rem;
       h6 {
@@ -254,7 +254,7 @@ main {
       display: block;
       width: 10px;
       height: 1px;
-      background: var(--bs-gray);
+      background: var(--bs-gray-dark);
       opacity: 0.8;
       position: absolute;
       bottom: 0;
@@ -265,7 +265,7 @@ main {
         display: none;
       }
     }
-    // 시
+    // poem
     &.poem {
       img {
         max-width: 80px;
@@ -274,7 +274,7 @@ main {
         width: 100%;
       }
     }
-    // 인사말
+    // greeting
     &.greeting {
       p {
         // background: rgba(151, 98, 33, 0.06);
@@ -284,10 +284,9 @@ main {
       .parents {
         margin-top: 2rem;
         width: 100%;
-        max-width: 400px;
-        padding: 2rem 0;
-        border-top: 1px solid var(--bs-border);
-        border-bottom: 1px solid var(--bs-border);
+        padding: 1.5rem 0;
+        border-top: 2px double var(--bs-border);
+        border-bottom: 2px double var(--bs-border);
         & > div {
           display: flex;
           justify-content: center;
@@ -324,19 +323,21 @@ main {
         }
       }
     }
-    // 앨범
+    // album
     &.album {
       padding: 0;
-      // margin: 0 -1rem;
       .swiper {
         width: 100%;
         .swiper-wrapper {
-          height: 600px;
+          height: 150vw;
+          max-height: 960px;
+          overflow: hidden;
+          z-index: 0;
           .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
+            background: url("../images/bg_bottom.jpg") repeat;
             img {
               max-width: 100%;
               object-fit: cover;
@@ -348,7 +349,10 @@ main {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 1rem 1.5rem 0;
+          padding: 1rem 1.5rem 0.5rem;
+          background: url("../images/bg_bottom.jpg") repeat;
+          margin-bottom: -1px;
+          z-index: 1;
           small {
             position: relative;
             z-index: 2;
@@ -393,6 +397,9 @@ main {
           bottom: inherit;
           margin: 0;
           padding: 1rem 1.5rem;
+          background: url("../images/bg_bottom.jpg") repeat;
+          margin-top: -2px;
+          z-index: 1;
           .swiper-pagination-bullet {
             width: 5px;
             height: 5px;
@@ -404,12 +411,12 @@ main {
         }
       }
     }
-    // 달력
+    // calendar
     &.calendar {
       padding: 5rem 3rem;
+      max-width: 360px;
       .table-box {
-        max-width: 400px;
-        border: 2px double var(--bs-border);
+        border: 1px solid var(--bs-border);
         border-right: 0;
         border-left: 0;
         padding: 0.75rem 0 1.5rem;
@@ -438,7 +445,7 @@ main {
       }
     }
     // 오시는 길
-    &.path {
+    &.direction {
       padding: 5rem 0;
       .map-box {
         width: 100%;
@@ -476,56 +483,34 @@ main {
       }
       .btn-area {
         width: 100%;
-        padding: 1.5rem 1rem 0;
+        padding: 1rem 1.5rem 0;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         a.btn {
           display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          height: 40px;
+          justify-content: center;
+          align-items: flex-end;
+          height: 64px;
+          padding: 0 0 0.5rem 0;
           width: 100%;
-          margin: 0 0.25rem;
+          color: var(--bs-gray-dark);
+          border: 1px solid var(--bs-border);
+          border-radius: 0.25rem;
           font-weight: 400;
-          font-size: 12px;
+          font-size: 11px;
+          font-family: var(--bs-font-sans-serif);
           background-repeat: no-repeat;
           background-size: auto 24px;
-          background-position: right 0.75rem center;
-          font-family: var(--bs-font-sans-serif);
-          border: 1px solid var(--bs-gray);
-          color: var(--bs-dark);
-          border-radius: 0;
-          margin-bottom: 0.5rem;
-          // box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-          strong,
-          span {
-            font-family: var(--bs-font-sans-serif);
-            display: block;
-          }
-          strong {
-            font-weight: 700;
-            padding-right: 0.25rem;
-          }
-          &:focus,
-          &:active {
-            // border: none;
+          background-position: center 0.75rem;
+          &.btn-tmap {
+            background-image: url("../images/ic_tmap.png");
           }
           &.btn-naver {
-            // background-color: #fff;
             background-image: url("../images/ic_navermap.png");
-            // color: #00c73c;
           }
           &.btn-kakao {
             background-image: url("../images/ic_kakaomap.png");
-            // background-color: #ffe500;
-            // color: #0081c7;
-          }
-          &.btn-tmap {
-            background-image: url("../images/ic_tmap.png");
-            // background-color: #ffe500;
-            // color: #0081c7;
           }
         }
       }
@@ -533,41 +518,101 @@ main {
         width: 100%;
         padding: 0 1.5rem;
         text-align: left;
+        color: var(--bs-gray-dark);
         strong {
           display: block;
           margin-top: 1rem;
+          color: var(--bs-dark);
         }
         u {
           text-decoration: none;
+          color: var(--bs-dark);
+          padding: 0 0.15rem;
           background: var(--bs-primary-opacity);
         }
       }
     }
 
-    // 계좌
+    // account
     &.account {
       .account-box {
         width: 100%;
-        max-width: 400px;
-        .accordion-button {
-          color: var(--dark);
-          &:not(.collapsed) {
-            color: var(--dark);
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.1);
-          }
-        }
-        .accordion-body {
-          dl {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            dt {
+        .accordion {
+          --bs-accordion-border-radius: 0;
+          --bs-accordion-inner-border-radius: 0;
+          --bs-accordion-active-bg: transparent;
+          --bs-accordion-btn-focus-box-shadow: none;
+          --bs-accordion-border-width: 0;
+          --bs-accordion-bg: transparent;
+          --bs-accordion-btn-bg: transparent;
+          border-bottom: 1px solid var(--bs-border);
+          .accordion-item {
+            .accordion-header {
+              background-repeat: no-repeat;
+              background-size: 24px auto;
+              background-position: left center;
+              &#btn-groom {
+                background-image: url("../images/ic_groom.png");
+              }
+              &#btn-bride {
+                background-image: url("../images/ic_bride.png");
+              }
+              .accordion-button {
+                color: var(--dark);
+                border-top: 1px solid var(--bs-border);
+                padding: 1rem 0.5rem 1rem 2rem;
+                &::after {
+                  opacity: 0.5;
+                }
+                &:not(.collapsed) {
+                  font-weight: 700;
+                  &::after {
+                    background-image: var(--bs-accordion-btn-icon);
+                  }
+                }
+              }
+            }
+            .accordion-body {
+              border-top: 1px solid var(--bs-border);
+              padding: 1.25rem 0.5rem;
+              dl {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+                dt {
+                  font-weight: 400;
+                  span {
+                    padding-left: 0.75rem;
+                    color: var(--bs-gray);
+                    font-weight: 400;
+                  }
+                }
+              }
             }
           }
         }
       }
     }
+
+    &.footer {
+      padding: 1rem 0;
+      background: var(--bs-gray);
+      color: var(--bs-white);
+    }
+  }
+  .btn-copy {
+    color: var(--bs-gray-dark);
+    background: var(--bs-btn);
+    border: 1px solid var(--bs-border);
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    font-weight: 400;
+    font-size: 11px;
+    font-family: var(--bs-font-sans-serif);
   }
 }
 .split {
@@ -575,16 +620,6 @@ main {
     display: inline-flex;
     min-width: 6px;
   }
-}
-.btn-copy {
-  background: var(--bs-dark);
-  color: var(--bs-white);
-  padding: 0.4rem 1rem;
-  border: 0;
-  border-radius: 4px;
-  font-family: var(--bs-font-sans-serif);
-  font-weight: 300;
-  font-size: 12px;
 }
 .pc-description {
   width: 100vw;
@@ -594,22 +629,20 @@ main {
   align-items: center;
   justify-content: center;
 }
-.copy-input {
-  display: block;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-}
 .toast {
-  width: 160px;
+  width: 140px;
   position: fixed;
   top: 1rem;
-  left: calc(50% - 80px);
-  background: rgba(0, 0, 0, 0.75);
-  color: var(--bs-white);
+  left: calc(50% - 70px);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-family: var(--bs-font-sans-serif);
+  border-radius: 1rem;
   z-index: 5;
+  .toast-body {
+    padding: 0.5rem 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    color: var(--bs-white);
+    font-weight: 300;
+  }
 }
