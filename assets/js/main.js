@@ -33,7 +33,7 @@ articles.forEach((article) => {
   gsap.to(article, {
     autoAlpha: 1,
     y: 0,
-    duration: 0.75,
+    duration: 0.6,
     ease: "power1.inOut",
     scrollTrigger: {
       trigger: article,
@@ -73,7 +73,7 @@ setTimeout(function () {
       opacity: 1,
       stagger: 0.2,
       duration: 0.5,
-      ease: "power1.in",
+      ease: "power2.out",
     }
   );
   // 2022년 11월 13일 일요일, 오후 1시 30분
@@ -176,7 +176,7 @@ $(introTouch).click(function () {
   // 높이조정
   introTouchTl.to(intro, {
     delay: 0.5,
-    height: 320,
+    height: 300,
     zIndex: 1,
     duration: 1,
     ease: "power2.out",
