@@ -176,7 +176,7 @@ $(introTouch).click(function () {
   // 높이조정
   introTouchTl.to(intro, {
     delay: 0.5,
-    height: 300,
+    height: 280,
     zIndex: 1,
     duration: 1,
     ease: "power2.out",
