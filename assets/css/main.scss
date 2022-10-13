@@ -197,7 +197,7 @@ main {
     padding: 0 0 calc(var(--vh, 1vh) * 12);
     .animate-box {
       i {
-        background: url("../images/ic_scroll.png") no-repeat center / 20px auto;
+        background: url("../images/ic_scroll.png") no-repeat center / 24px auto;
       }
       &:before {
         content: "";
@@ -207,7 +207,7 @@ main {
         position: absolute;
         top: 0;
         left: 25%;
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.4);
         border-radius: 100%;
         animation-name: scrollCircle;
         animation-duration: 2s;

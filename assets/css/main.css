@@ -210,7 +210,7 @@ main.fixed {
 }
 
 #visual #scroll-box .animate-box i {
-  background: url("../images/ic_scroll.png") no-repeat center/20px auto;
+  background: url("../images/ic_scroll.png") no-repeat center/24px auto;
 }
 
 #visual #scroll-box .animate-box:before {
@@ -221,7 +221,7 @@ main.fixed {
   position: absolute;
   top: 0;
   left: 25%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 100%;
   animation-name: scrollCircle;
   animation-duration: 2s;

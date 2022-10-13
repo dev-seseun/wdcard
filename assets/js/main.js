@@ -218,7 +218,7 @@ const swiper = new Swiper(".swiper", {
   zoom: true,
   speed: 600,
   threshold: 20,
-  loop: true,
+  // loop: true,
   preloadImages: false,
   lazy: true,
   // autoHeight: true,
@@ -232,6 +232,7 @@ const swiper = new Swiper(".swiper", {
   },
   scrollbar: {
     el: ".swiper-scrollbar",
+    draggable: true,
   },
 });
 
