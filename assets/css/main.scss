@@ -254,13 +254,14 @@ main {
     margin-right: auto;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(16px);
+    transform: translateY(10px);
     .title-area {
       margin-bottom: 2rem;
       h6 {
         margin: 0;
         font-size: 1.1rem;
         font-weight: 700;
+        line-height: 1.8;
       }
       p {
         margin-top: 0.3rem;
@@ -439,6 +440,12 @@ main {
             }
           }
         }
+        .swiper-scrollbar {
+          position: relative;
+          left: inherit;
+          bottom: inherit;
+          margin: 0.5rem 1%;
+        }
       }
     }
     // calendar
@@ -453,6 +460,15 @@ main {
         table {
           width: 100%;
           table-layout: fixed;
+          th,
+          td {
+            &:nth-child(7) {
+              color: #7777a8;
+            }
+            &:nth-child(1) {
+              color: #c55555;
+            }
+          }
           th {
             font-weight: 400;
             color: var(--bs-gray);

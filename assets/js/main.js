@@ -59,7 +59,7 @@ setTimeout(function () {
   introTl.to("body", {
     delay: 1,
     opacity: 1,
-    duration: 1.5,
+    duration: 1,
     ease: "power3.out",
   });
   introTl.fromTo(
@@ -71,8 +71,7 @@ setTimeout(function () {
     {
       y: 0,
       opacity: 1,
-      stagger: 0.2,
-      duration: 0.5,
+      stagger: 0.12,
       ease: "power2.out",
     }
   );
@@ -86,8 +85,7 @@ setTimeout(function () {
     {
       y: 0,
       opacity: 1,
-      delay: 0.25,
-      duration: 0.5,
+      duration: 0.4,
       ease: "power1.in",
     }
   );
@@ -101,13 +99,12 @@ setTimeout(function () {
     {
       y: 0,
       opacity: 1,
-      delay: 0.25,
-      duration: 0.5,
+      duration: 0.4,
       ease: "power1.in",
     }
   );
   // 아이콘
-  introTl.fromTo(introTouch, { opacity: 0, visibility: "hidden" }, { opacity: 1, visibility: "visible", duration: 0.5, ease: "power1.in" });
+  introTl.fromTo(introTouch, { opacity: 0, visibility: "hidden" }, { opacity: 1, visibility: "visible", duration: 0.4, ease: "power1.in" });
 }, 500);
 
 // touch animate
@@ -118,12 +115,12 @@ $(introTouch).click(function () {
 
   const introTouchTl = gsap.timeline();
   // 터치버튼감춤
-  introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.5 });
+  introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.2 });
 
   // gif 이미지사라짐
   introTouchTl.to(introImg, {
     opacity: 0,
-    duration: 1.5,
+    duration: 1,
     ease: "power1.out",
   });
   // remove dom
@@ -134,42 +131,42 @@ $(introTouch).click(function () {
     color: "#fff",
     padding: "1.25rem 2rem",
     background: "rgba(0,0,0,0.15)",
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
   introTouchTl.to(introH1, {
     transform: "scale(0.9)",
     fontWeight: 700,
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
   introTouchTl.to(introH2, {
     transform: "scale(0.85)",
     marginTop: "-4px",
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
   introTouchTl.to(intro, {
     padding: "0 2rem",
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
 
   // 라인색상변화
   introTouchTl.to("#intro .box-1", {
     borderColor: "rgba(255,255,255,0.75)",
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
   introTouchTl.to("#intro .box-2", {
     borderColor: "rgba(255,255,255,0.5)",
-    delay: -1.5,
-    duration: 1.5,
+    delay: -1,
+    duration: 1,
     ease: "power4.out",
   });
 
@@ -206,13 +203,13 @@ $(introTouch).click(function () {
     delay: -1,
     filter: "blur(0px)",
     transform: "scale(1)",
-    duration: 4,
+    duration: 2.5,
     ease: "power2.out",
   });
   // 스크롤 가능
   setTimeout(function () {
     $("main").removeClass("fixed");
-  }, 4500);
+  }, 3000);
 });
 
 // swiper
@@ -232,6 +229,9 @@ const swiper = new Swiper(".swiper", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  scrollbar: {
+    el: ".swiper-scrollbar",
   },
 });
 

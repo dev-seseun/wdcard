@@ -129,7 +129,7 @@ main.fixed {
 
 #intro #touch-box small span {
   font-size: 11px;
-  color: var(--bs-gray-dark);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 #intro #touch-box .animate-box i {
@@ -269,7 +269,7 @@ main.fixed {
   margin-right: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(24px);
+  transform: translateY(10px);
 }
 
 #bottom article .title-area {
@@ -280,6 +280,7 @@ main.fixed {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
+  line-height: 1.8;
 }
 
 #bottom article .title-area p {
@@ -478,6 +479,13 @@ main.fixed {
   background: var(--bs-dark);
 }
 
+#bottom article.album .swiper .swiper-scrollbar {
+  position: relative;
+  left: inherit;
+  bottom: inherit;
+  margin: 0.5rem 1%;
+}
+
 #bottom article.calendar {
   padding: 5rem 3rem;
   max-width: 360px;
@@ -493,6 +501,16 @@ main.fixed {
 #bottom article.calendar .table-box table {
   width: 100%;
   table-layout: fixed;
+}
+
+#bottom article.calendar .table-box table th:nth-child(7),
+#bottom article.calendar .table-box table td:nth-child(7) {
+  color: #7777a8;
+}
+
+#bottom article.calendar .table-box table th:nth-child(1),
+#bottom article.calendar .table-box table td:nth-child(1) {
+  color: #c55555;
 }
 
 #bottom article.calendar .table-box table th {
