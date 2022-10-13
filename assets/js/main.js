@@ -42,6 +42,16 @@ articles.forEach((article) => {
   });
 });
 
+// remove element
+function removeElement(element) {
+  if (typeof element === "string") {
+    element = document.querySelector(element);
+  }
+  return function () {
+    element.parentNode.removeChild(element);
+  };
+}
+
 // intro animate
 setTimeout(function () {
   const introTl = gsap.timeline();
@@ -109,12 +119,16 @@ $(introTouch).click(function () {
   const introTouchTl = gsap.timeline();
   // 터치버튼감춤
   introTouchTl.to(introTouch, { opacity: 0, visibility: "hidden", duration: 0.5 });
+
   // gif 이미지사라짐
   introTouchTl.to(introImg, {
     opacity: 0,
     duration: 1.5,
     ease: "power1.out",
   });
+  // remove dom
+  introTouchTl.call(removeElement(introImg));
+
   // 텍스트박스변환
   introTouchTl.to(introText, {
     color: "#fff",
@@ -144,6 +158,7 @@ $(introTouch).click(function () {
     duration: 1.5,
     ease: "power4.out",
   });
+
   // 라인색상변화
   introTouchTl.to("#intro .box-1", {
     borderColor: "rgba(255,255,255,0.75)",
@@ -157,14 +172,16 @@ $(introTouch).click(function () {
     duration: 1.5,
     ease: "power4.out",
   });
+
   // 높이조정
   introTouchTl.to(intro, {
     delay: 0.5,
-    height: "42%",
+    height: 400,
     zIndex: 1,
     duration: 1,
     ease: "power2.out",
   });
+
   // 라인위치변화
   introTouchTl.to("#intro .box-1", {
     delay: -1,
@@ -206,7 +223,7 @@ const swiper = new Swiper(".swiper", {
   threshold: 20,
   loop: true,
   // preloadImages: false,
-  lazy: true,
+  // lazy: true,
   // autoHeight: true,
   pagination: {
     el: ".swiper-pagination",
