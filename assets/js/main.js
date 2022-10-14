@@ -230,10 +230,10 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    draggable: true,
-  },
+  // scrollbar: {
+  //   el: ".swiper-scrollbar",
+  //   draggable: true,
+  // },
 });
 
 // 지도
