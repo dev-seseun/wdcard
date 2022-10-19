@@ -129,7 +129,7 @@ $(introTouch).click(function () {
   // 텍스트박스변환
   introTouchTl.to(introText, {
     color: "#fff",
-    padding: "1.25rem 2rem",
+    padding: "1.25rem 0",
     background: "rgba(0,0,0,0.15)",
     delay: -1,
     duration: 1,
@@ -150,7 +150,7 @@ $(introTouch).click(function () {
     ease: "power4.out",
   });
   introTouchTl.to(intro, {
-    padding: "0 2rem",
+    padding: "0 1.5rem",
     delay: -1,
     duration: 1,
     ease: "power4.out",

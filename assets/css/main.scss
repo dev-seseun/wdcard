@@ -25,15 +25,15 @@ main {
 }
 @keyframes scrollCircle {
   0% {
-    top: -16px;
+    bottom: -16px;
     opacity: 0;
   }
   50% {
-    top: 24px;
+    bottom: 24px;
     opacity: 1;
   }
   100% {
-    top: 24px;
+    bottom: 24px;
     opacity: 0;
   }
 }
@@ -73,7 +73,7 @@ main {
     width: 100%;
     max-width: 500px;
     text-align: center;
-    padding: 0.5rem 2.5rem;
+    padding: 0.5rem 0;
     color: var(--bs-dark);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     position: relative;
@@ -205,7 +205,7 @@ main {
         width: 50%;
         height: 50%;
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 25%;
         background: rgba(255, 255, 255, 0.4);
         border-radius: 100%;
@@ -380,7 +380,7 @@ main {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 1rem 1.5rem 0.5rem;
+          padding: 1rem 1.5rem 0.5rem 1.25rem;
           background: #fffbf5 url("../images/bg_bottom.jpg") repeat;
           margin-bottom: -1px;
           z-index: 1;
@@ -388,7 +388,8 @@ main {
             position: relative;
             z-index: 2;
             font-size: 11px;
-            color: var(--bs-secondary);
+            line-height: 16px;
+            text-align: left;
           }
           & > div {
             display: flex;
@@ -656,10 +657,12 @@ main {
                 }
                 dt {
                   font-weight: 400;
+                  text-align: left;
                   span {
-                    padding-left: 0.75rem;
+                    padding-left: 0.5rem;
                     color: var(--bs-gray);
                     font-weight: 400;
+                    font-size: 11px;
                   }
                 }
               }
