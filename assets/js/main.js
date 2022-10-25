@@ -242,6 +242,7 @@ new daum.roughmap.Lander({
   key: "2bvqt",
   mapWidth: "100%",
   mapHeight: "320",
+  level: 4,
 }).render();
 
 // }
